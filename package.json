@@ -1,0 +1,24 @@
+{
+    "name": "gb-web-site",
+    "version": "1.0.0",
+    "description": "Website for grønnbank",
+    "main": "server.js",
+    "type": "module",
+    "scripts": {
+        "start": "node server.js",
+        "postinstall": "node postBuild.js"
+    },
+    "keywords": [],
+    "author": "Minecat300,noahhalv",
+    "license": "none",
+    "dependencies": {
+        "body-parser": "^1.20.2",
+        "cors": "^2.8.5",
+        "express": "^4.10.4"
+    },
+    "installPath": "~/gronnbank/web/site",
+    "pm2": {
+        "name": "gb-web-site",
+        "file": "server.js"
+    }
+}
