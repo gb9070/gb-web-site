@@ -1,0 +1,354 @@
+/* ── Cases Layout ── */
+.cases-layout {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ── Header ── */
+.cases-header h2 {
+  margin: 0 0 0.2rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+body.light .cases-header h2 {
+  color: #111111;
+}
+
+.cases-header p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+body.light .cases-header p {
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.cases-header p b {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+body.light .cases-header p b {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+/* ── Outer grid (create | list | list) ── */
+.cases-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+/* Third column (assigned) wraps under list when present */
+.cases-grid > .case-card:nth-child(3) {
+  grid-column: 2;
+}
+
+.cases-grid > .case-card:nth-child(2),
+.cases-grid > .case-card:nth-child(3) {
+  grid-column: 2;
+}
+
+/* If all three cards are shown, stack the two lists in the right column */
+.cases-grid:has(> .case-card:nth-child(3)) > .case-card:nth-child(2) {
+  grid-column: 2;
+}
+
+/* ── Shared card ── */
+.case-card {
+  background: #1e1e1e;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+body.light .case-card {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.case-card h3 {
+  margin: 0 0 1.1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+body.light .case-card h3 {
+  color: #111111;
+}
+
+.case-card > p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+body.light .case-card > p {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+/* ── Create form ── */
+.case-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.case-form input,
+.case-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 11px;
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 7px;
+  font-size: 0.875rem;
+  font-family: inherit;
+  color: #ffffff;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  resize: vertical;
+}
+
+.case-form input {
+  height: 38px;
+  resize: none;
+}
+
+.case-form textarea {
+  min-height: 80px;
+}
+
+.case-form input::placeholder,
+.case-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.28);
+}
+
+.case-form input:hover,
+.case-form textarea:hover {
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.case-form input:focus,
+.case-form textarea:focus {
+  border-color: #4ade80;
+  box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.1);
+}
+
+body.light .case-form input,
+body.light .case-form textarea {
+  background: #f9f9f8;
+  border-color: rgba(0, 0, 0, 0.12);
+  color: #111111;
+}
+
+body.light .case-form input::placeholder,
+body.light .case-form textarea::placeholder {
+  color: rgba(0, 0, 0, 0.28);
+}
+
+body.light .case-form input:hover,
+body.light .case-form textarea:hover {
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+body.light .case-form input:focus,
+body.light .case-form textarea:focus {
+  border-color: #16a34a;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1);
+}
+
+/* ── Case list grid ── */
+.case-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  max-height: 520px;
+  overflow-y: auto;
+  padding-right: 2px;
+}
+
+.case-grid::-webkit-scrollbar {
+  width: 4px;
+}
+
+.case-grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.case-grid::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+}
+
+body.light .case-grid::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+/* ── Individual case item ── */
+.case-item {
+  background: #151515;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 8px;
+  padding: 0.875rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  transition: border-color 0.15s;
+}
+
+.case-item:hover {
+  border-color: rgba(255, 255, 255, 0.13);
+}
+
+body.light .case-item {
+  background: #f9f9f8;
+  border-color: rgba(0, 0, 0, 0.07);
+}
+
+body.light .case-item:hover {
+  border-color: rgba(0, 0, 0, 0.13);
+}
+
+.case-top strong {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+body.light .case-top strong {
+  color: #111111;
+}
+
+.case-item > p {
+  margin: 0;
+  font-size: 0.825rem;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.45;
+}
+
+body.light .case-item > p {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* ── Meta badges ── */
+.case-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 9px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: lowercase;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  color: rgba(255, 255, 255, 0.55);
+}
+
+body.light .badge {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* Priority variants */
+.badge.high {
+  background: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.3);
+  color: #fca5a5;
+}
+
+body.light .badge.high {
+  background: rgba(239, 68, 68, 0.08);
+  border-color: rgba(239, 68, 68, 0.25);
+  color: #dc2626;
+}
+
+.badge.medium {
+  background: rgba(251, 146, 60, 0.12);
+  border-color: rgba(251, 146, 60, 0.3);
+  color: #fdba74;
+}
+
+body.light .badge.medium {
+  background: rgba(234, 88, 12, 0.08);
+  border-color: rgba(234, 88, 12, 0.22);
+  color: #ea580c;
+}
+
+.badge.low {
+  background: rgba(74, 222, 128, 0.1);
+  border-color: rgba(74, 222, 128, 0.25);
+  color: #86efac;
+}
+
+body.light .badge.low {
+  background: rgba(22, 163, 74, 0.07);
+  border-color: rgba(22, 163, 74, 0.2);
+  color: #16a34a;
+}
+
+/* ── Case users ── */
+.case-users {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 0.2rem;
+}
+
+body.light .case-users {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.case-users strong {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+body.light .case-users strong {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* ── Loading state ── */
+.cases-layout > div:only-child {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.9rem;
+  padding: 2rem 0;
+}
+
+body.light .cases-layout > div:only-child {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+/* ── Responsive ── */
+@media (max-width: 720px) {
+  .cases-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cases-grid > .case-card:nth-child(2),
+  .cases-grid > .case-card:nth-child(3) {
+    grid-column: 1;
+  }
+
+  .cases-layout {
+    padding: 1.25rem 1rem;
+  }
+}
