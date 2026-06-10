@@ -138,9 +138,17 @@ function CaseList({ title, cases }) {
                             </span>
                         </div>
 
-                        <small>
-                            {c.uuid}
-                        </small>
+                        <div className="case-users">
+                            <div>
+                                <strong>Created By:</strong>{" "}
+                                {c.recipientAccount?.username ?? "Unknown"}
+                            </div>
+
+                            <div>
+                                <strong>Assigned To:</strong>{" "}
+                                {c.ownerAccount?.username ?? "Unknown"}
+                            </div>
+                        </div>
                     </div>
                 ))}
             </div>
