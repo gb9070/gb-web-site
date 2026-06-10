@@ -7,6 +7,7 @@ import Login from "./Components/Login.jsx";
 import Home from "./Components/Home.jsx";
 import AdminPanel from "./Components/Admin.jsx";
 import NavBar from "./Components/Nav.jsx";
+import UserCase from "./Components/userCase.jsx";
 
 function RequireAuth({ user, children }) {
     if (!user) return <Navigate to="/login" replace />;
@@ -65,7 +66,7 @@ export default function App() {
                             path="/userCase"
                             element={
                                 <RequireAuth user={user}>
-                                    <CreateCase user={user} />
+                                    <UserCase user={user} />
                                 </RequireAuth>
                             }
                         />
