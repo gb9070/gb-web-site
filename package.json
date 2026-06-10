@@ -1,6 +1,6 @@
 {
     "name": "gb-web-site",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Website for grønnbank",
     "main": "server.js",
     "type": "module",
