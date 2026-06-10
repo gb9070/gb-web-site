@@ -9,6 +9,7 @@ import AdminPanel from "./Components/Admin.jsx";
 import NavBar from "./Components/Nav.jsx";
 import UserCase from "./Components/userCase.jsx";
 import SupportCases from "./Components/supportCase.jsx";
+import SingleCase from "./Components/singleCase.jsx";
 
 function RequireAuth({ user, children }) {
     if (!user) return <Navigate to="/login" replace />;
@@ -79,6 +80,15 @@ export default function App() {
                                     <RequireRole user={user} roles={["support", "admin"]}>
                                         <SupportCases user={user} />
                                     </RequireRole>
+                                </RequireAuth>
+                            }
+                        />
+
+                        <Route
+                            path="/case/:uuid"
+                            element={
+                                <RequireAuth user={user}>
+                                    <SingleCase user={user} />
                                 </RequireAuth>
                             }
                         />
