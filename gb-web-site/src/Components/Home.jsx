@@ -4,7 +4,7 @@ import "./Home.css";
 
 function Home({ user }) {
     const isAdmin = user?.roles?.includes("admin");
-    const isManagement = user?.roles?.includes("management");
+    const isSupport = user?.roles?.includes("support");
 
     return (
         <div className="home">
@@ -29,6 +29,13 @@ function Home({ user }) {
                     <h3>My Case</h3>
                     <p>Create and manage your cases</p>
                 </Link>
+
+                {(isSupport || isAdmin) && (
+                    <Link to="/supportCases" className="home-card">
+                        <h3>Support Cases</h3>
+                        <p>View and manage support cases</p>
+                    </Link>
+                )}
                 
                 {isAdmin && (
                     <Link to="/admin" className="home-card">
