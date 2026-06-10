@@ -25,7 +25,7 @@ function Home({ user }) {
             </div>
 
             <div className="home-grid">
-                <Link to="/cases" className="home-card">
+                <Link to="/userCase" className="home-card">
                     <h3>My Case</h3>
                     <p>Create and manage your cases</p>
                 </Link>
