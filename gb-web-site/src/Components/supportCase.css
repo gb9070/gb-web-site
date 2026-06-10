@@ -35,6 +35,59 @@ body.light .case-item.clickable:hover {
   background: #f4f4f2;
 }
 
+/* ── Sort bar ── */
+.sort-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.sort-bar label {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.45);
+  white-space: nowrap;
+}
+
+body.light .sort-bar label {
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.sort-bar select {
+  height: 34px;
+  padding: 0 10px;
+  background: #1e1e1e;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 7px;
+  font-size: 0.875rem;
+  font-family: inherit;
+  color: #ffffff;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+.sort-bar select:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.sort-bar select:focus {
+  border-color: #4ade80;
+}
+
+body.light .sort-bar select {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.12);
+  color: #111111;
+}
+
+body.light .sort-bar select:hover {
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+body.light .sort-bar select:focus {
+  border-color: #16a34a;
+}
+
 /* ── Responsive ── */
 @media (max-width: 480px) {
   .cases-page {
