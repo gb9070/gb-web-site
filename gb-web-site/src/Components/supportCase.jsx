@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import "./supportCase.css";
+
 function getPriorityClass(priority) {
     if (priority >= 8) return "high";
     if (priority >= 4) return "medium";
