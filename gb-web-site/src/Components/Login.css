@@ -1,0 +1,139 @@
+/* ── Login Page ── */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #111111;
+  padding: 1rem;
+}
+
+body.light .login-page {
+  background: #f4f4f2;
+}
+
+/* ── Card ── */
+.login-card {
+  width: 100%;
+  max-width: 380px;
+  background: #1e1e1e;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 2rem 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+body.light .login-card {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+/* ── Title ── */
+.login-title {
+  margin: 0 0 0.25rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+body.light .login-title {
+  color: #111111;
+}
+
+/* ── Inputs ── */
+.login-input {
+  width: 100%;
+  box-sizing: border-box;
+  height: 40px;
+  padding: 0 12px;
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 7px;
+  font-size: 0.9rem;
+  color: #ffffff;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.login-input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.login-input:hover {
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.login-input:focus {
+  border-color: #4ade80;
+  box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.12);
+}
+
+body.light .login-input {
+  background: #f9f9f8;
+  border-color: rgba(0, 0, 0, 0.12);
+  color: #111111;
+}
+
+body.light .login-input::placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+body.light .login-input:hover {
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+body.light .login-input:focus {
+  border-color: #16a34a;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1);
+}
+
+/* ── Submit button ── */
+.btn-blue {
+  height: 40px;
+  background: #4ade80;
+  border: none;
+  border-radius: 7px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #052e16;
+  cursor: pointer;
+  transition: background 0.15s, opacity 0.15s, transform 0.1s;
+}
+
+.btn-blue.full {
+  width: 100%;
+  margin-top: 0.25rem;
+}
+
+.btn-blue:hover:not(:disabled) {
+  background: #86efac;
+}
+
+.btn-blue:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.btn-blue:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+body.light .btn-blue {
+  background: #16a34a;
+  color: #ffffff;
+}
+
+body.light .btn-blue:hover:not(:disabled) {
+  background: #15803d;
+}
+
+/* ── Mobile ── */
+@media (max-width: 420px) {
+  .login-card {
+    padding: 1.5rem 1.25rem;
+    border-radius: 10px;
+  }
+}

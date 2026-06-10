@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
+import "./Nav.css";
+
 function NavBar({ user, logout }) {
     const [open, setOpen] = useState(false);
     const [theme, setTheme] = useState("dark");

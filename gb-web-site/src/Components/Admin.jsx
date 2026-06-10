@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+import "./Admin.css";
+
 /* ---------------- CREATE USER ---------------- */
 function AdminCreateUser({ isAdmin }) {
     const [form, setForm] = useState({

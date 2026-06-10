@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+import "./Home.css";
+
 function Home({ user }) {
     const isAdmin = user?.roles?.includes("admin");
     const isManagement = user?.roles?.includes("management");
