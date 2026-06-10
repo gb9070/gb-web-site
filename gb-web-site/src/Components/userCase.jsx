@@ -11,7 +11,7 @@ function CreateCase({ user, refreshCases }) {
         name: "",
         description: "",
         priority: 1,
-        recipientAccountUuid: "",
+        ownerAccountUuid: null,
         status: "open"
     });
 
@@ -41,7 +41,7 @@ function CreateCase({ user, refreshCases }) {
                     body: JSON.stringify({
                         ...form,
                         priority: Number(form.priority),
-                        ownerAccountUuid: user.uuid
+                        rescipientAccountUuid: user.uuid
                     })
                 }
             );
@@ -56,7 +56,7 @@ function CreateCase({ user, refreshCases }) {
                 name: "",
                 description: "",
                 priority: 1,
-                recipientAccountUuid: "",
+                ownerAccountUuid: null,
                 status: "open"
             });
 
@@ -85,13 +85,6 @@ function CreateCase({ user, refreshCases }) {
                     value={form.description}
                     onChange={handleChange}
                     placeholder="Description"
-                />
-
-                <input
-                    name="recipientAccountUuid"
-                    value={form.recipientAccountUuid}
-                    onChange={handleChange}
-                    placeholder="Recipient UUID"
                 />
 
                 <input
@@ -160,6 +153,8 @@ export default function CasesPanel({ user }) {
     const [receivedCases, setReceivedCases] = useState([]);
     const [loading, setLoading] = useState(true);
 
+    const isSupport = user.roles.includes("support");
+
     const fetchCases = async () => {
         try {
             setLoading(true);
@@ -187,8 +182,8 @@ export default function CasesPanel({ user }) {
             const ownerData = await ownerRes.json();
             const recipientData = await recipientRes.json();
 
-            setOwnedCases(ownerData || []);
-            setReceivedCases(recipientData || []);
+            setOwnedCases(recipientData|| []);
+            setReceivedCases(ownedCases || []);
         } catch (err) {
             console.error(err);
         } finally {
@@ -226,10 +221,12 @@ export default function CasesPanel({ user }) {
                     cases={ownedCases}
                 />
 
-                <CaseList
-                    title="Cases Assigned To Me"
-                    cases={receivedCases}
-                />
+                {isSupport && (
+                    <CaseList
+                        title="Cases Assigned To Me"
+                        cases={receivedCases}
+                    />
+                )}
             </div>
         </div>
     );
