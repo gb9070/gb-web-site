@@ -67,7 +67,7 @@ function NavBar({ user, logout }) {
                         Home
                     </NavLink>
 
-                    <NavLink onClick={closeMenu} to="/cases" className="nav-item">
+                    <NavLink onClick={closeMenu} to="/userCase" className="nav-item">
                         My Cases
                     </NavLink>
 
