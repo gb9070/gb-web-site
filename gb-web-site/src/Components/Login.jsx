@@ -33,6 +33,7 @@ function Login({ setUser }) {
             if (!res.ok) throw new Error(data.message || "Login failed");
 
             setUser({
+                uuid: data.uuid,
                 username: data.username,
                 roles: data.roles || []
             });
