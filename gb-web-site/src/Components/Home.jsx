@@ -25,16 +25,14 @@ function Home({ user }) {
             </div>
 
             <div className="home-grid">
+                <Link to="/cases" className="home-card">
+                    <h3>My Case</h3>
+                    <p>Create and manage your cases</p>
+                </Link>
+                
                 {isAdmin && (
                     <Link to="/admin" className="home-card">
                         <h3>Admin Panel</h3>
-                        <p>Manage users and roles</p>
-                    </Link>
-                )}
-
-                {(isManagement || isAdmin) && (
-                    <Link to="/management" className="home-card">
-                        <h3>Management Panel</h3>
                         <p>Manage users and roles</p>
                     </Link>
                 )}
