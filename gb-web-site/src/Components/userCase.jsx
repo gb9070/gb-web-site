@@ -41,7 +41,7 @@ function CreateCase({ user, refreshCases }) {
                     body: JSON.stringify({
                         ...form,
                         priority: Number(form.priority),
-                        rescipientAccountUuid: user.uuid
+                        recipientAccountUuid: user.uuid
                     })
                 }
             );
@@ -154,6 +154,7 @@ export default function CasesPanel({ user }) {
     const [loading, setLoading] = useState(true);
 
     const isSupport = user.roles.includes("support");
+    const isAdmin = user.roles.includes("admin");
 
     const fetchCases = async () => {
         try {
@@ -221,7 +222,7 @@ export default function CasesPanel({ user }) {
                     cases={ownedCases}
                 />
 
-                {isSupport && (
+                {(isSupport || isAdmin) && (
                     <CaseList
                         title="Cases Assigned To Me"
                         cases={receivedCases}
