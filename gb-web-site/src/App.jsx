@@ -76,7 +76,7 @@ export default function App() {
                             path="/supportCases"
                             element={
                                 <RequireAuth user={user}>
-                                    <RequireRole user={user} roles={["support"]}>
+                                    <RequireRole user={user} roles={["support", "admin"]}>
                                         <SupportCases user={user} />
                                     </RequireRole>
                                 </RequireAuth>
