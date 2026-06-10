@@ -1,0 +1,267 @@
+/* ── Case Page ── */
+.case-page {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* ── Back button ── */
+.case-page > button:first-child {
+  align-self: flex-start;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 7px;
+  padding: 5px 12px;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.case-page > button:first-child:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+body.light .case-page > button:first-child {
+  border-color: rgba(0, 0, 0, 0.12);
+  color: rgba(0, 0, 0, 0.5);
+}
+
+body.light .case-page > button:first-child:hover {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.75);
+}
+
+/* ── Title ── */
+.case-page h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+body.light .case-page h2 {
+  color: #111111;
+}
+
+/* ── Edit form (inside .case-card) ── */
+.case-card {
+  background: #1e1e1e;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+body.light .case-card {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.case-card h3 {
+  margin: 0 0 0.375rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+body.light .case-card h3 {
+  color: #111111;
+}
+
+.case-card input,
+.case-card textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 11px;
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 7px;
+  font-size: 0.875rem;
+  font-family: inherit;
+  color: #ffffff;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.case-card input {
+  height: 38px;
+}
+
+.case-card textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.case-card input::placeholder,
+.case-card textarea::placeholder {
+  color: rgba(255, 255, 255, 0.28);
+}
+
+.case-card input:hover,
+.case-card textarea:hover {
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.case-card input:focus,
+.case-card textarea:focus {
+  border-color: #4ade80;
+  box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.1);
+}
+
+body.light .case-card input,
+body.light .case-card textarea {
+  background: #f9f9f8;
+  border-color: rgba(0, 0, 0, 0.12);
+  color: #111111;
+}
+
+body.light .case-card input::placeholder,
+body.light .case-card textarea::placeholder {
+  color: rgba(0, 0, 0, 0.28);
+}
+
+body.light .case-card input:hover,
+body.light .case-card textarea:hover {
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+body.light .case-card input:focus,
+body.light .case-card textarea:focus {
+  border-color: #16a34a;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1);
+}
+
+/* ── Green save button ── */
+.btn-green {
+  height: 38px;
+  padding: 0 16px;
+  background: #4ade80;
+  border: none;
+  border-radius: 7px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #052e16;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.btn-green:hover {
+  background: #86efac;
+}
+
+.btn-green:active {
+  transform: scale(0.98);
+}
+
+body.light .btn-green {
+  background: #16a34a;
+  color: #ffffff;
+}
+
+body.light .btn-green:hover {
+  background: #15803d;
+}
+
+/* ── Blue assign button ── */
+.btn-blue {
+  height: 38px;
+  padding: 0 16px;
+  background: rgba(96, 165, 250, 0.12);
+  border: 1px solid rgba(96, 165, 250, 0.25);
+  border-radius: 7px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #93c5fd;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
+}
+
+.btn-blue:hover:not(:disabled) {
+  background: rgba(96, 165, 250, 0.2);
+  border-color: rgba(96, 165, 250, 0.4);
+}
+
+.btn-blue:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.btn-blue:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+body.light .btn-blue {
+  background: rgba(37, 99, 235, 0.07);
+  border-color: rgba(37, 99, 235, 0.18);
+  color: #1d4ed8;
+}
+
+body.light .btn-blue:hover:not(:disabled) {
+  background: rgba(37, 99, 235, 0.12);
+  border-color: rgba(37, 99, 235, 0.28);
+}
+
+/* ── Red delete button ── */
+.btn-red {
+  height: 38px;
+  padding: 0 16px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: 7px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #fca5a5;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
+}
+
+.btn-red:hover {
+  background: rgba(239, 68, 68, 0.18);
+  border-color: rgba(239, 68, 68, 0.4);
+}
+
+.btn-red:active {
+  transform: scale(0.98);
+}
+
+body.light .btn-red {
+  background: rgba(239, 68, 68, 0.07);
+  border-color: rgba(239, 68, 68, 0.2);
+  color: #dc2626;
+}
+
+body.light .btn-red:hover {
+  background: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+/* ── Hint text ── */
+.hint {
+  margin: 0;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+body.light .hint {
+  color: rgba(0, 0, 0, 0.38);
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .case-page {
+    padding: 1.25rem 1rem;
+  }
+}
