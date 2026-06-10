@@ -8,7 +8,7 @@ function NavBar({ user, logout }) {
     const [theme, setTheme] = useState("dark");
 
     const isAdmin = user.roles.includes("admin");
-    const isManagement = user.roles.includes("management");
+    const isSupport = user.roles.includes("support");
 
     const closeMenu = () => setOpen(false);
 
@@ -70,6 +70,12 @@ function NavBar({ user, logout }) {
                     <NavLink onClick={closeMenu} to="/userCase" className="nav-item">
                         My Cases
                     </NavLink>
+
+                    {(isSupport || isAdmin) && (
+                        <NavLink onClick={closeMenu} to="/supportCases" className="nav-item">
+                            Support Cases
+                        </NavLink>
+                    )}
 
                     {isAdmin && (
                         <NavLink onClick={closeMenu} to="/admin" className="nav-item admin">
