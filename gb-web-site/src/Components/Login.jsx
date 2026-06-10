@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
+import "./Login.css";
+
 function Login({ setUser }) {
     const navigate = useNavigate();
 

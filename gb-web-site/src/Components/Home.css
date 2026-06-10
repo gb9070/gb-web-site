@@ -1,0 +1,177 @@
+/* ── Home Page ── */
+.home {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ── Welcome card ── */
+.card {
+  background: #1e1e1e;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.5rem 1.75rem;
+}
+
+body.light .card {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.card h1 {
+  margin: 0 0 0.25rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+body.light .card h1 {
+  color: #111111;
+}
+
+.card .small {
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+body.light .card .small {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.card .small strong {
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+}
+
+body.light .card .small strong {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/* ── Role badges ── */
+.role-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: lowercase;
+  letter-spacing: 0.01em;
+}
+
+.badge-admin {
+  background: rgba(74, 222, 128, 0.12);
+  border: 1px solid rgba(74, 222, 128, 0.25);
+  color: #86efac;
+}
+
+body.light .badge-admin {
+  background: rgba(22, 163, 74, 0.08);
+  border-color: rgba(22, 163, 74, 0.2);
+  color: #15803d;
+}
+
+.badge-management {
+  background: rgba(96, 165, 250, 0.12);
+  border: 1px solid rgba(96, 165, 250, 0.25);
+  color: #93c5fd;
+}
+
+body.light .badge-management {
+  background: rgba(37, 99, 235, 0.08);
+  border-color: rgba(37, 99, 235, 0.18);
+  color: #1d4ed8;
+}
+
+/* fallback for any other role */
+.badge:not(.badge-admin):not(.badge-management) {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+body.light .badge:not(.badge-admin):not(.badge-management) {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.55);
+}
+
+/* ── Panel grid ── */
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+/* ── Panel link cards ── */
+.home-card {
+  display: block;
+  background: #1e1e1e;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
+}
+
+.home-card:hover {
+  background: #252525;
+  border-color: rgba(74, 222, 128, 0.3);
+  transform: translateY(-2px);
+}
+
+.home-card:active {
+  transform: translateY(0);
+}
+
+body.light .home-card {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+body.light .home-card:hover {
+  background: #fafaf9;
+  border-color: rgba(22, 163, 74, 0.35);
+}
+
+.home-card h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+body.light .home-card h3 {
+  color: #111111;
+}
+
+.home-card p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+body.light .home-card p {
+  color: rgba(0, 0, 0, 0.45);
+}
+
+/* ── Mobile ── */
+@media (max-width: 480px) {
+  .home {
+    padding: 1.25rem 1rem;
+  }
+
+  .home-grid {
+    grid-template-columns: 1fr;
+  }
+}
