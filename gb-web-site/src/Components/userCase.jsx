@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+import "./userCase.css";
+
 const getPriorityClass = (priority) => {
     if (priority >= 8) return "high";
     if (priority >= 4) return "medium";
@@ -141,12 +143,12 @@ function CaseList({ title, cases }) {
                         <div className="case-users">
                             <div>
                                 <strong>Created By:</strong>{" "}
-                                {c.recipientAccount?.username ?? "Unknown"}
+                                {c.recipientAccount?.username ?? "None"}
                             </div>
 
                             <div>
                                 <strong>Assigned To:</strong>{" "}
-                                {c.ownerAccount?.username ?? "Unknown"}
+                                {c.ownerAccount?.username ?? "None"}
                             </div>
                         </div>
                     </div>
