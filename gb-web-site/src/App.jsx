@@ -62,6 +62,15 @@ export default function App() {
                         />
 
                         <Route
+                            path="/userCase"
+                            element={
+                                <RequireAuth user={user}>
+                                    <CreateCase user={user} />
+                                </RequireAuth>
+                            }
+                        />
+
+                        <Route
                             path="*"
                             element={<Navigate to={user ? "/" : "/login"} />}
                         />
